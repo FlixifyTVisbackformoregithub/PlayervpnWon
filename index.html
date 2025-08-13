@@ -199,7 +199,7 @@
     <div class="mecontainor">
       <img src="pvpn.webp" alt="Aboutmeimg" />
       <h1>PlayerVPN</h1>
-      <p>Hiya! I am a frontend developer named PlayerVPN. I like to code in HTML CSS & JavaScript! I make proxies using UV static! I am located on Discord and other platforms! &#9829;</p>
+      <p id="thisismybiotext"></p>
       <div class="located">
         <p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -251,8 +251,6 @@
           overlay.style.display = 'none';
         }, 600);
       });
-    </script>
-    <script>
       const titles = ['@P', '@Pl', '@Pla', '@Play', '@Playe', '@Player', '@PlayerV', '@PlayerVP', '@PlayerVPN'];
       let index = 0;
       let direction = 1;
@@ -266,6 +264,20 @@
       }
       window.addEventListener('load', () => {
         titlechangingthingylookscool();
+      });
+      const thisismybiotext = "Hiya! I am a frontend developer named PlayerVPN. I like to code in HTML CSS & JavaScript! I make proxies using UV static! I am located on Discord and other platforms! ♥";
+      const elthingy = document.querySelector('.mecontainor p');
+      let i = 0;
+
+      function TIPWRITER() {
+        if (i < thisismybiotext.length) {
+          elthingy.innerHTML += thisismybiotext.charAt(i);
+          i++;
+          setTimeout(TIPWRITER, 50);
+        }
+      }
+      mainShit.addEventListener('transitionend', () => {
+        TIPWRITER();
       });
     </script>
   </body>
